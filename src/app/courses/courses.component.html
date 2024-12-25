@@ -1,0 +1,24 @@
+<!-- src/app/courses/courses.component.html -->
+<section class="courses-page">
+    <h2>Available Courses</h2>
+    <div class="courses-list">
+      <div class="course-card" *ngFor="let course of courses">
+        <h3>{{ course.title }}</h3>
+        <p>{{ course.description }}</p>
+        
+        <ng-container *ngIf="currentUser$ | async as currentUser">
+          <button (click)="enrollCourse(course.title, currentUser)">
+            Enroll
+          </button>
+        </ng-container>
+        
+        <!-- If the user is not logged in, show a button to prompt login -->
+        <ng-container *ngIf="!(currentUser$ | async)">
+          <button (click)="redirectToLogin()">
+            Enroll
+          </button>
+        </ng-container>
+      </div>
+    </div>
+  </section>
+  

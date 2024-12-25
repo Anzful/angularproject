@@ -1,0 +1,40 @@
+<!-- src/app/app.component.html -->
+<header>
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a routerLink="/home">Online Courses</a>
+    </div>
+    <input type="checkbox" id="navbar-toggle" class="navbar-toggle" />
+    <label for="navbar-toggle" class="navbar-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+    <ul class="navbar-menu">
+      <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+      <li><a routerLink="/courses" routerLinkActive="active">Courses</a></li>
+      <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+      <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+      
+      <!-- Show Login and Sign Up if not logged in -->
+      <ng-container *ngIf="!(currentUser$ | async); else loggedIn">
+        <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
+        <li><a routerLink="/sign-up" routerLinkActive="active">Sign Up</a></li>
+      </ng-container>
+      
+      <!-- Template for logged-in users -->
+      <ng-template #loggedIn>
+        <li class="welcome-message">Welcome, {{ (currentUser$ | async)?.name }}!</li>
+        <li><button class="logout-button" (click)="logout()">Logout</button></li>
+      </ng-template>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<footer>
+  <p>© 2024 Online Course Website. All rights reserved.</p>
+</footer>

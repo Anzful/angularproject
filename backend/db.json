@@ -1,0 +1,24 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "name": "Admin User",
+        "email": "admin@example.com",
+        "password": "1234" 
+      }
+    ],
+    "courses": [
+      {
+        "id": 1,
+        "title": "Introduction to Angular",
+        "description": "Learn the basics of Angular framework."
+      },
+      {
+        "id": 2,
+        "title": "Advanced JavaScript",
+        "description": "Deep dive into JavaScript concepts."
+      }
+      
+    ]
+  }
+  

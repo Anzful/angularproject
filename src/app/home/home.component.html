@@ -1,0 +1,31 @@
+<!-- src/app/home/home.component.html -->
+<section class="home-hero">
+    <div class="hero-content">
+      <h1>Welcome to Our Online Courses</h1>
+      <p>Enhance your knowledge and skills with our curated learning materials.</p>
+      <button (click)="navigateToCourses()">Explore Courses</button>
+    </div>
+  </section>
+  
+  <section class="featured-courses">
+    <h2>Featured Courses</h2>
+    <!-- Example usage of highlight directive on a container -->
+    <div appHighlight class="course-card">
+      <h3>Angular Basics</h3>
+      <p>Learn the basics of Angular and build dynamic web applications.</p>
+      <button (click)="enrollCourse('Angular Basics')">Enroll Now</button>
+    </div>
+  
+    <div appHighlight class="course-card">
+      <h3>React Fundamentals</h3>
+      <p>Intro to React JS and building interactive UIs.</p>
+      <button (click)="enrollCourse('React Fundamentals')">Enroll Now</button>
+    </div>
+  
+    <div class="course-card">
+      <h3>Vue Essentials</h3>
+      <p>Getting started with Vue for modern web development.</p>
+      <button (click)="enrollCourse('Vue Essentials')">Enroll Now</button>
+    </div>
+  </section>
+  

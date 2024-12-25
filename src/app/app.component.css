@@ -1,0 +1,138 @@
+/* src/app/app.component.css */
+
+/* Define CSS Variables */
+:root {
+    --primary-color: #2c3e50;    /* Dark Blue */
+    --secondary-color: #ecf0f1;  /* Light Gray */
+    --accent-color: #e74c3c;     /* Red */
+    --text-color: #ffffff;       /* White */
+    --hover-color: #34495e;      /* Darker Blue for hover effects */
+  }
+  
+  /* Reset Styles for Navbar */
+  header {
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  /* Branding */
+  .navbar-brand a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .navbar-brand a:hover {
+    color: var(--hover-color);
+  }
+  
+  /* Hamburger Menu Icon */
+  .navbar-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .navbar-icon span {
+    height: 3px;
+    width: 25px;
+    background-color: var(--text-color);
+    margin-bottom: 4px;
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+  
+  /* Navbar Menu */
+  .navbar-menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .navbar-menu li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+  }
+  
+  .navbar-menu li a:hover,
+  .navbar-menu li a.active {
+    color: var(--hover-color);
+  }
+  
+  /* Welcome Message */
+  .welcome-message {
+    color: var(--text-color);
+    font-weight: 600;
+  }
+  
+  /* Logout Button */
+  .logout-button {
+    padding: 0.5rem 1rem;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .logout-button:hover {
+    /* CSS doesn't have a built-in darken function. Manually specify a darker shade */
+    background-color: #c0392b; /* Darker red */
+    transform: translateY(-2px);
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .navbar-icon {
+      display: flex;
+    }
+    
+    .navbar-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: var(--primary-color);
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in-out;
+    }
+    
+    .navbar-menu li {
+      width: 100%;
+    }
+    
+    .navbar-menu li a,
+    .navbar-menu li button {
+      width: 100%;
+      padding: 0.5rem 0;
+    }
+    
+    /* Toggle Menu Visibility */
+    #navbar-toggle:checked + .navbar-icon + .navbar-menu {
+      max-height: 500px; /* Arbitrary large value to allow full menu display */
+    }
+  }
+  

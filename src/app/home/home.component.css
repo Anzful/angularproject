@@ -1,0 +1,51 @@
+/* src/app/home/home.component.scss */
+.home-hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: #e0f7fa;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-content button {
+    padding: 0.75rem 1.5rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .hero-content button:hover {
+    background-color: #0056b3;
+  }
+  
+  .featured-courses {
+    margin: 2rem 0;
+  }
+  
+  .featured-courses h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .course-card {
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    margin: 1rem;
+    border-radius: 8px;
+    transition: transform 0.3s;
+  }
+  
+  .course-card:hover {
+    transform: translateY(-5px);
+  }
+  
